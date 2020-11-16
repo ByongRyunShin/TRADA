@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginBt"
         android:layout_width="286dp"
         android:layout_height="42dp"
         android:layout_marginStart="72dp"
@@ -17,6 +17,7 @@
         android:background="@drawable/btn_round_border"
         android:text="로그인"
         android:textColor="#68646C"
+        android:onClick="onLoginBtClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
