@@ -17,11 +17,13 @@ public class StatFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_stat, container, false);
+
         // Inflate the layout for this fragment
-        ScrollView scrollView = (ScrollView) container.findViewById(R.id.scrollView);
-        Button button1 = (Button) container.findViewById(R.id.btn_stat1);
-        Button button2 = (Button) container.findViewById(R.id.btn_stat2);
-        Button button3 = (Button) container.findViewById(R.id.btn_stat3);
+        ScrollView scrollView = (ScrollView) root.findViewById(R.id.scrollView);
+        Button button1 = (Button) root.findViewById(R.id.btn_stat1);
+        Button button2 = (Button) root.findViewById(R.id.btn_stat2);
+        Button button3 = (Button) root.findViewById(R.id.btn_stat3);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +55,6 @@ public class StatFragment extends Fragment {
             }
         });
 
-        return inflater.inflate(R.layout.fragment_stat, container, false);
+        return root;
     }
 }
