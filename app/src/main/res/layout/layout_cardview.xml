@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/custom_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+
+            <ImageView
+                android:id="@+id/custom_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:foreground="@drawable/icon_buy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_date"
+                app:srcCompat="@drawable/icon_buy"
+                tools:srcCompat="@drawable/icon_buy" />
+
+            <ImageView
+                android:id="@+id/custom_iv_arrow"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="12dp"
+                android:foreground="@drawable/up"
+                app:layout_constraintStart_toEndOf="@+id/custom_tv_curprice"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name"
+                app:srcCompat="@drawable/up" />
+
+            <TextView
+                android:id="@+id/custom_tv_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="(+8.2%)"
+                android:textColor="#FF0A0A"
+                android:textSize="10sp"
+                app:layout_constraintStart_toEndOf="@+id/custom_tv_return"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+
+            <TextView
+                android:id="@+id/custom_tv_return"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="3,860"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/custom_iv_arrow"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+
+            <TextView
+                android:id="@+id/custom_tv_memo"
+                android:layout_width="233dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:text="다음에는 조급증을 버리고 매수 타이밍을 더 신중하게 잡을 것."
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/custom_iv"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_price" />
+
+            <TextView
+                android:id="@+id/custom_tv_curprice"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="63,100"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/custom_tv_curpricename"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+
+            <TextView
+                android:id="@+id/custom_tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="매수가: 59,240"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/custom_iv"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+
+            <TextView
+                android:id="@+id/custom_tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="20/11/05"
+                android:textColor="#090909"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/custom_tv_code"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="035420 KOSPI"
+                android:textColor="#8A8D91"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/custom_tv_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/custom_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="삼성전자"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/custom_tv_date"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/custom_tv_curpricename"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="현재가:"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/custom_tv_price"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    
+    
+    
+</androidx.constraintlayout.widget.ConstraintLayout>
