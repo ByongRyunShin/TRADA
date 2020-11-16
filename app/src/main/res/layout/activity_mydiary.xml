@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="통계"
+        android:text="매매일지"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -76,7 +76,7 @@
         android:layout_height="600dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="#00FFFFFF"
@@ -95,7 +95,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view1"
                 android:layout_width="match_parent"
-                android:layout_height="550dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:background="@android:color/white"
                 app:cardCornerRadius="8dp"
@@ -125,8 +125,8 @@
 
                     <ImageView
                         android:id="@+id/imageView1"
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
+                        android:layout_width="67dp"
+                        android:layout_height="64dp"
                         android:layout_marginTop="24dp"
                         android:layout_marginEnd="2dp"
                         android:layout_marginRight="2dp"
@@ -134,234 +134,7 @@
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icon_stat" />
-
-                    <TableLayout
-                        android:layout_width="356dp"
-                        android:layout_height="200dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:stretchColumns="0,1,2"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.4"
-
-                        app:layout_constraintStart_toStartOf="parent">
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:paddingBottom="10dp">
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="구분"
-                                android:textColor="#001F43"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="수익률"
-                                android:textColor="#001F43"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="거래건수"
-                                android:textColor="#001F43"
-                                android:textSize="14sp"
-                                android:textStyle="bold" />
-
-
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:paddingBottom="10dp">
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="20년 6월"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="98만원"
-                                android:textColor="@color/design_default_color_error"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="32건"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                        </TableRow>
-
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:paddingBottom="10dp">
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="20년 7월"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="-72만원"
-                                android:textColor="#2748FB"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="20건"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                        </TableRow>
-
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:paddingBottom="10dp">
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="20년 8월"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="105만원"
-                                android:textColor="@color/design_default_color_error"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="14건"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                        </TableRow>
-
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:paddingBottom="10dp">
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="20년 8월"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="105만원"
-                                android:textColor="@color/design_default_color_error"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="14건"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                        </TableRow>
-
-
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp"
-                            android:paddingBottom="10dp">
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="20년 9월"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="12만원"
-                                android:textColor="@color/design_default_color_error"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:text="28건"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-
-                        </TableRow>
-
-
-                    </TableLayout>
+                        app:srcCompat="@drawable/icon_profile" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
