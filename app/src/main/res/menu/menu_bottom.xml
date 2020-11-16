@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/tab_TradeDiary"
+        android:id="@+id/tab_tradeDiary"
         android:enabled="true"
         android:icon="@drawable/ic_notebook"
         android:title="매매 일지"
@@ -20,7 +20,7 @@
         android:title=""
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/tab_chart"
+        android:id="@+id/tab_stats"
         android:enabled="true"
         android:icon="@drawable/ic_chart"
         android:title="통계"
