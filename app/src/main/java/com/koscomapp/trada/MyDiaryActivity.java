@@ -49,21 +49,34 @@ public class MyDiaryActivity extends AppCompatActivity {
         LinearLayout linearLayout = (LinearLayout)findViewById(R.id.mydiary_linerLayout);
 
         Sub cardview = new Sub(getApplicationContext());
-
        // name.setText(datastr[0][0]);
         linearLayout.addView(cardview);
 
-
         Sub cardview2 = new Sub(getApplicationContext());
-        linearLayout.addView(cardview2);
-
-
         Sub cardview3 = new Sub(getApplicationContext());
-        linearLayout.addView(cardview3);
-
-
-
         Sub cardview4 = new Sub(getApplicationContext());
+
+
+        Sub[] cardviewset = {cardview2,cardview3,cardview4};
+
+
+
+        for(int i=0;i<3;i++) {
+
+                ((TextView) cardviewset[i].findViewById(R.id.custom_tv_name)).setText(datastr[0][i]);
+                ((TextView) cardviewset[i].findViewById(R.id.custom_tv_percent)).setText(datastr[1][i]);
+                ((TextView) cardviewset[i].findViewById(R.id.custom_tv_return)).setText(datastr[2][i]);
+                 ((TextView) cardviewset[i].findViewById(R.id.custom_tv_memo)).setText(datastr[3][i]);
+            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(datastr[4][i]);
+            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_price)).setText(datastr[5][i]);
+            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_date)).setText(datastr[6][i]);
+            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_code)).setText(datastr[7][i]);
+
+        }
+
+
+        linearLayout.addView(cardview2);
+        linearLayout.addView(cardview3);
         linearLayout.addView(cardview4);
 
 

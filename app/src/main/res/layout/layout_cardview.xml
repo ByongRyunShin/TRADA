@@ -18,11 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"/>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -46,7 +41,9 @@
                 android:id="@+id/custom_iv_arrow"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="26dp"
                 android:foreground="@drawable/up"
                 app:layout_constraintStart_toEndOf="@+id/custom_tv_curprice"
                 app:layout_constraintTop_toBottomOf="@+id/custom_tv_name"
@@ -55,20 +52,20 @@
             <TextView
                 android:id="@+id/custom_tv_percent"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
                 android:gravity="center_vertical"
                 android:text="(+8.2%)"
                 android:textColor="#FF0A0A"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/custom_tv_return"
                 app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
 
             <TextView
                 android:id="@+id/custom_tv_return"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
                 android:gravity="center_vertical"
                 android:text="3,860"
                 android:textColor="#000000"
@@ -80,33 +77,34 @@
                 android:id="@+id/custom_tv_memo"
                 android:layout_width="233dp"
                 android:layout_height="56dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:gravity="center_vertical"
                 android:text="다음에는 조급증을 버리고 매수 타이밍을 더 신중하게 잡을 것."
                 android:textColor="#000000"
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/custom_iv"
-                app:layout_constraintTop_toBottomOf="@+id/custom_tv_price" />
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_return" />
 
             <TextView
                 android:id="@+id/custom_tv_curprice"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
                 android:gravity="center_vertical"
                 android:text="63,100"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/custom_tv_curpricename"
-                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_price" />
 
             <TextView
                 android:id="@+id/custom_tv_price"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="8dp"
@@ -124,7 +122,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="20/11/05"
                 android:textColor="#090909"
@@ -138,7 +136,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center_vertical"
                 android:text="035420 KOSPI"
                 android:textColor="#8A8D91"
@@ -152,7 +150,7 @@
                 android:layout_height="34dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
                 android:text="삼성전자"
                 android:textColor="#000000"
@@ -164,17 +162,17 @@
             <TextView
                 android:id="@+id/custom_tv_curpricename"
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:gravity="center_vertical"
                 android:text="현재가:"
                 android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/custom_tv_price"
-                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
+                app:layout_constraintStart_toEndOf="@+id/custom_iv"
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_price" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
