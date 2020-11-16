@@ -15,7 +15,6 @@ public class Sub extends LinearLayout{
 
         init(context);
     }
-
     public Sub(Context context) {
         super(context);
 

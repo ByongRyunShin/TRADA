@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:text="david88@gmail.cpm"
+        android:text="david88@gmail.com"
         android:textColor="#A9FFFFFF"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView1"

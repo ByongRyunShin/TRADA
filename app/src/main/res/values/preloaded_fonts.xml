@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/advent_pro_semibold</item>
+        <item>@font/alegreya_sc</item>
+        <item>@font/amita</item>
+        <item>@font/atma_semibold</item>
+        <item>@font/caesar_dressing</item>
+        <item>@font/cutive_mono</item>
+        <item>@font/economica_bold</item>
+        <item>@font/goudy_bookletter_1911</item>
+        <item>@font/julius_sans_one</item>
+        <item>@font/macondo</item>
+        <item>@font/roboto</item>
+    </array>
+</resources>
