@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,8 +17,12 @@ import com.koscomapp.trada.DiaryDetailActivity;
 import com.koscomapp.trada.R;
 import com.koscomapp.trada.SNSDetailActivity;
 import com.koscomapp.trada.Sub;
+import com.koscomapp.trada.http.OpenAPIManager;
 
 public class TradeDiaryFragment extends Fragment {
+
+
+    OpenAPIManager apiManager = new OpenAPIManager();
 
     String[][] datastr= {{"삼성전자","SK텔레콤","현대차","네이버","신풍제약","에코프로비엠", "빅히트"},
             {"(+3.4%)","(-2.2%)","(+9.4%)","(+3.5%)","(+1.2%)","(+3.4%)","(+4.7%)"},
@@ -38,14 +43,18 @@ public class TradeDiaryFragment extends Fragment {
 
 
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_trade_diary, container, false);
         //Type here
         LinearLayout linearLayout = (LinearLayout)root.findViewById(R.id.mydiary_linerLayout);
+
+        TextView kospitv = (TextView) root.findViewById(R.id.textView20);
+        TextView kosdaqtv = (TextView) root.findViewById(R.id.textView22);
+
+        kospitv.setText(apiManager.getMarketIndex(getActivity().getApplicationContext(),"kospi"));
+        kosdaqtv.setText(apiManager.getMarketIndex(getActivity().getApplicationContext(),"kosdaq"));
 
         Sub cardview = new Sub(getActivity().getApplicationContext());
         Sub cardview2 = new Sub(getActivity().getApplicationContext());
