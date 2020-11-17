@@ -37,9 +37,11 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="164dp"
             android:background="@drawable/btn_round_border"
-            android:gravity="center"
-            android:text="메모를 입력하세요."
-            android:textColor="#5C5A5A"
+
+            android:gravity="center_horizontal"
+            android:hint="메모를 입력하세요."
+            android:textColor="#000000"
+            android:textColorHint="#605D5D"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></EditText>
@@ -54,8 +56,10 @@
             android:background="@drawable/btn_round_border"
             android:gravity="center"
 
-            android:text="종목명"
-            android:textColor="#535151"
+            android:hint="종목명"
+            android:textColor="#040404"
+
+            android:textColorHint="#605D5D"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
