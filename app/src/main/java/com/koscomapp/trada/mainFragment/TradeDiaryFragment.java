@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TradeDiaryFragment extends Fragment {
+    Handler m;
     ArrayList<String> arr;
     TextView temp;
     OpenAPIManager apiManager = new OpenAPIManager();
@@ -64,6 +67,7 @@ public class TradeDiaryFragment extends Fragment {
         TextView kospitv = (TextView) root.findViewById(R.id.textView20);
         TextView kosdaqtv = (TextView) root.findViewById(R.id.textView22);
 
+        m = new Handler();
         APIInterface api = APIClient.getListApiService();
 
         Call<ResultMarketIndex> call = api.getMarketIndex("kospi", "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
@@ -182,20 +186,21 @@ public class TradeDiaryFragment extends Fragment {
             }
         });
 
-        getActivity().runOnUiThread(
-                new Runnable() {
-                    @Override
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(1500);
+                m.post(new Runnable() {
                     public void run() {
-                        try {
-                            Thread.sleep(500);
-                            for(int i=0; i<7; i++) {
-                                ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(datastr[4][i]);
-                            }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                        for(int i=0; i<7; i++) {
+                            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(arr.get(i));
+
                         }
                     }
                 });
+            }
+        }).start();
+
         return root;
     }
 

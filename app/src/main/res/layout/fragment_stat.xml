@@ -475,7 +475,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <com.github.mikephil.charting.charts.PieChart
-                            android:id="@+id/piechartCap"
+                            android:id="@+id/piechartVal"
                             android:layout_width="170dp"
                             android:layout_height="180dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -501,7 +501,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <com.github.mikephil.charting.charts.PieChart
-                            android:id="@+id/piechartVal"
+                            android:id="@+id/piechartCap"
                             android:layout_width="170dp"
                             android:layout_height="180dp"
                             app:layout_constraintBottom_toBottomOf="parent"

@@ -41,7 +41,7 @@
 
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editTextMe"
             android:layout_width="381dp"
             android:layout_height="416dp"
             android:layout_marginStart="16dp"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent"></EditText>
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editTextNa"
             android:layout_width="390dp"
             android:layout_height="50dp"
             android:layout_marginStart="12dp"
@@ -87,12 +87,13 @@
             android:layout_marginEnd="145dp"
             android:layout_marginRight="145dp"
             android:background="@drawable/btn_rectangle_filled"
+            android:onClick="onSaveBtClicked"
             android:text="저장하기"
 
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextMe" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

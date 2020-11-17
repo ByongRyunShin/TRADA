@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +29,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SnsFeedFragment extends Fragment {
-    ArrayList<String> arr;
+    Handler m;
+    ArrayList<String> tarr;
     SubSNS cardview2;
     SubSNS cardview3;
     SubSNS cardview4;
@@ -59,6 +62,7 @@ public class SnsFeedFragment extends Fragment {
         // Inflate the layout for this fragment
         LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.SNS_LinearLayout);
 
+        m= new Handler();
         cardview2 = new SubSNS(getActivity().getApplicationContext());
         cardview3 = new SubSNS(getActivity().getApplicationContext());
         cardview4 = new SubSNS(getActivity().getApplicationContext());
@@ -73,7 +77,7 @@ public class SnsFeedFragment extends Fragment {
         SubSNS cardview = new SubSNS(getActivity().getApplicationContext());
         // name.setText(datastr[0][0]);
         linearLayout.addView(cardview);
-        arr=new ArrayList<String>();
+        tarr=new ArrayList<String>();
 
         for(int i=0; i<3; i++){
             Call<ResultStockPrice> call2 = api.getStockConclusionPrice("kospi", datastr[1][i], "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
@@ -84,8 +88,8 @@ public class SnsFeedFragment extends Fragment {
 
                     if(response.isSuccessful()) {
                         ResultStockPrice result = response.body();
-                        //arr.add(result.getStockDetail().getTrdPrc());
-                        Toast.makeText(getContext(),result.getStockDetail().getTrdPrc(), Toast.LENGTH_LONG ).show();
+                        tarr.add(result.getStockDetail().getTrdPrc());
+                        //Toast.makeText(getContext(),result.getStockDetail().getTrdPrc(), Toast.LENGTH_LONG ).show();
                     } else {
                         Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
                     }
@@ -134,20 +138,19 @@ public class SnsFeedFragment extends Fragment {
             }
         });
 
-        getActivity().runOnUiThread(
-                new Runnable() {
-                    @Override
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(1500);
+                m.post(new Runnable() {
                     public void run() {
-                        try {
-                            Thread.sleep(1000);
-                            for(int i=0; i<3; i++) {
-                                //((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price_num)).setText(arr.get(i));
-                            }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                        for(int i=0; i<3; i++) {
+                            ((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price_num)).setText(tarr.get(i));
                         }
                     }
                 });
+            }
+        }).start();
         return root;
     }
 }

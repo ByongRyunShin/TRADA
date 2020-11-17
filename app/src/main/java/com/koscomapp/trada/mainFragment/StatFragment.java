@@ -133,11 +133,11 @@ public class StatFragment extends Fragment {
         chartProfit.getLegend().setEnabled(false);
 
         final List<Data> data3 = new ArrayList<>();
-        data3.add(new Data(0f, -224.1f, "12-29"));
-        data3.add(new Data(1f, 238.5f, "12-30"));
-        data3.add(new Data(2f, 1280.1f, "12-31"));
-        data3.add(new Data(3f, -442.3f, "01-01"));
-        data3.add(new Data(4f, -2280.1f, "01-02"));
+        data3.add(new Data(6, 98, "12-29"));
+        data3.add(new Data(7, -72, "12-30"));
+        data3.add(new Data(8, 105, "12-31"));
+        data3.add(new Data(9, 105, "01-01"));
+        data3.add(new Data(10, 12, "01-02"));
 
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
@@ -170,15 +170,13 @@ public class StatFragment extends Fragment {
         colors.add(getResources().getColor(R.color.themecolor3));
         colors.add(getResources().getColor(R.color.blue));
         colors.add(getResources().getColor(R.color.themecolor5));
-        colors.add(getResources().getColor(R.color.black));
 
 
         yValues.add(new PieEntry(58.2f, "바이오"));
         yValues.add(new PieEntry(14.5f, "통신"));
         yValues.add(new PieEntry(11.3f, "철강"));
         yValues.add(new PieEntry(9.9f, "IT"));
-        yValues.add(new PieEntry(5.8f, "석유화학"));
-        yValues.add(new PieEntry(0.3f, "기타"));
+        yValues.add(new PieEntry(6.3f, "석유화학"));
 
         pieChartType.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
@@ -234,10 +232,10 @@ public class StatFragment extends Fragment {
         colors1.add(getResources().getColor(R.color.blue));
 
 
-        yValues1.add(new PieEntry(58.2f, "바이오"));
-        yValues1.add(new PieEntry(14.5f, "통신"));
-        yValues1.add(new PieEntry(11.3f, "철강"));
-        yValues1.add(new PieEntry(9.9f, "IT"));
+        yValues1.add(new PieEntry(45.3f, "대형주"));
+        yValues1.add(new PieEntry(30.1f, "중형주"));
+        yValues1.add(new PieEntry(13.1f, "소형주"));
+        yValues1.add(new PieEntry(11.5f, "기타"));
 
         pieChartCap.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
@@ -247,6 +245,7 @@ public class StatFragment extends Fragment {
         dataSet1.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         dataSet1.setValueLinePart1Length(0.8f);
         dataSet1.setValueLinePart2Length(.8f);
+        dataSet1.setValueLinePart1OffsetPercentage(1.f);
         dataSet1.setValueTextColor(Color.BLACK);
         dataSet1.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         dataSet1.setColors(colors);
@@ -288,14 +287,10 @@ public class StatFragment extends Fragment {
 
         colors2.add(getResources().getColor(R.color.themecolor1));
         colors2.add(getResources().getColor(R.color.themecolor2));
-        colors2.add(getResources().getColor(R.color.themecolor3));
-        colors2.add(getResources().getColor(R.color.blue));
 
 
-        yValues2.add(new PieEntry(58.2f, "바이오"));
-        yValues2.add(new PieEntry(14.5f, "통신"));
-        yValues2.add(new PieEntry(11.3f, "철강"));
-        yValues2.add(new PieEntry(9.9f, "IT"));
+        yValues2.add(new PieEntry(70.4f, "가치주"));
+        yValues2.add(new PieEntry(29.6f, "성장주"));
 
         pieChartVal.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
@@ -305,6 +300,7 @@ public class StatFragment extends Fragment {
         dataSet2.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         dataSet2.setValueLinePart1Length(0.8f);
         dataSet2.setValueLinePart2Length(.8f);
+        dataSet1.setValueLinePart1OffsetPercentage(1.f);
         dataSet2.setValueTextColor(Color.BLACK);
         dataSet2.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         dataSet2.setColors(colors2);
@@ -365,7 +361,7 @@ public class StatFragment extends Fragment {
         linechart.animateXY(2000, 2000);
 
         // don't forget to refresh the drawing
-        setDataLine(45, 100);
+        setDataLine(20, 100);
 
         // redraw
         linechart.invalidate();
@@ -439,10 +435,27 @@ public class StatFragment extends Fragment {
 
         ArrayList<Entry> values = new ArrayList<>();
 
-        for (int i = 0; i < count; i++) {
-            float val = (float) (Math.random() * (range + 1)) + 20;
-            values.add(new Entry(i, val));
-        }
+
+        values.add(new Entry(0, 30));
+        values.add(new Entry(1, 35));
+        values.add(new Entry(2, 33));
+        values.add(new Entry(3, 41));
+        values.add(new Entry(4, 42));
+        values.add(new Entry(5, 41));
+        values.add(new Entry(6, 46));
+        values.add(new Entry(7, 48));
+        values.add(new Entry(8, 50));
+        values.add(new Entry(9, 51));
+        values.add(new Entry(10, 51));
+        values.add(new Entry(11, 53));
+        values.add(new Entry(12, 58));
+        values.add(new Entry(13, 53));
+        values.add(new Entry(14, 50));
+        values.add(new Entry(15, 47));
+        values.add(new Entry(16, 43));
+        values.add(new Entry(17, 42));
+        values.add(new Entry(18, 41));
+        values.add(new Entry(19, 45));
 
         LineDataSet set1;
 
