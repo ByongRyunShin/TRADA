@@ -22,14 +22,17 @@ import com.koscomapp.trada.http.APIClient;
 import com.koscomapp.trada.http.APIInterface;
 import com.koscomapp.trada.http.OpenAPIManager;
 import com.koscomapp.trada.http.ResultMarketIndex;
+import com.koscomapp.trada.http.ResultStockPrice;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TradeDiaryFragment extends Fragment {
-
-
+    ArrayList<String> arr;
+    TextView temp;
     OpenAPIManager apiManager = new OpenAPIManager();
 
     String[][] datastr= {{"삼성전자","SK텔레콤","현대차","네이버","신풍제약","에코프로비엠", "빅히트"},
@@ -46,7 +49,7 @@ public class TradeDiaryFragment extends Fragment {
             {"63,100","209,500","177,500","284,000","123,400","333,000","112,335"},
             {"매수가: 59,240","매수가: 214,000","매수가: 150,500","매수가: 261,200","매수가: 233,400","매수가: 444,000","매수가: 222,000"},
             {"20/11/05","20/11/04","20/11/03","20/11/03","20/11/03","20/11/02","20/11/01"},
-            {"035420 KOSPI","017670 KOSPI","005380 KOSPI","018120 KOSPI","019170 KOSPI","247540 KOSPI","352820 KOSPI"}
+            {"005930","017670","005380","035420","019170","068270","352820"}
     };
 
 
@@ -110,7 +113,27 @@ public class TradeDiaryFragment extends Fragment {
         Sub cardview7 = new Sub(getActivity().getApplicationContext());
 
         Sub[] cardviewset = {cardview, cardview2,cardview3,cardview4,cardview5,cardview6,cardview7};
+        arr=new ArrayList<String>();
+        for(int i=0; i<7; i++){
+            Call<ResultStockPrice> call2 = api.getStockConclusionPrice("kospi", datastr[7][i], "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
 
+            call2.enqueue(new Callback<ResultStockPrice>() {
+                @Override
+                public void onResponse(Call<ResultStockPrice> call, Response<ResultStockPrice> response) {
+
+                    if(response.isSuccessful()) {
+                        ResultStockPrice result = response.body();
+                        arr.add(result.getStockDetail().getTrdPrc());
+                    } else {
+                        Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<ResultStockPrice> call, Throwable t) {
+                    Toast.makeText(getContext(),"onFailure",Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
         for(int i=0;i<7;i++) {
 
@@ -118,7 +141,10 @@ public class TradeDiaryFragment extends Fragment {
             ((TextView) cardviewset[i].findViewById(R.id.custom_tv_percent)).setText(datastr[1][i]);
             ((TextView) cardviewset[i].findViewById(R.id.custom_tv_return)).setText(datastr[2][i]);
             ((TextView) cardviewset[i].findViewById(R.id.custom_tv_memo)).setText(datastr[3][i]);
-            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(datastr[4][i]);
+
+
+
+
             ((TextView) cardviewset[i].findViewById(R.id.custom_tv_price)).setText(datastr[5][i]);
             ((TextView) cardviewset[i].findViewById(R.id.custom_tv_date)).setText(datastr[6][i]);
 
@@ -156,6 +182,22 @@ public class TradeDiaryFragment extends Fragment {
             }
         });
 
+        getActivity().runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(500);
+                            for(int i=0; i<7; i++) {
+                                ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(datastr[4][i]);
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
         return root;
     }
+
+
 }

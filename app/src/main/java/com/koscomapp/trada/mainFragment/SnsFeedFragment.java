@@ -11,15 +11,31 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.koscomapp.trada.R;
 import com.koscomapp.trada.SNSDetailActivity;
 import com.koscomapp.trada.SubSNS;
+import com.koscomapp.trada.http.APIClient;
+import com.koscomapp.trada.http.APIInterface;
+import com.koscomapp.trada.http.ResultStockPrice;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SnsFeedFragment extends Fragment {
+    ArrayList<String> arr;
+    SubSNS cardview2;
+    SubSNS cardview3;
+    SubSNS cardview4;
+    SubSNS[] cardviewset;
+    TextView temp;
 
     String[][] datastr= {{"삼성전자","신풍제약", "에코프로비엠"},
-            {"019170","352820", "247540"},
+            {"005930","352820", "068270"},
             {"KOSPI","KOSPI", "코스닥"},
             {"▲","▲","▲"},
             {"10.6","12.3","0.0"},
@@ -43,15 +59,43 @@ public class SnsFeedFragment extends Fragment {
         // Inflate the layout for this fragment
         LinearLayout linearLayout = (LinearLayout) root.findViewById(R.id.SNS_LinearLayout);
 
+        cardview2 = new SubSNS(getActivity().getApplicationContext());
+        cardview3 = new SubSNS(getActivity().getApplicationContext());
+        cardview4 = new SubSNS(getActivity().getApplicationContext());
+
+        cardviewset = new SubSNS[4];
+        cardviewset[0]=cardview2;
+        cardviewset[1]=cardview3;
+        cardviewset[2]=cardview4;
+
+        APIInterface api = APIClient.getListApiService();
+
         SubSNS cardview = new SubSNS(getActivity().getApplicationContext());
         // name.setText(datastr[0][0]);
         linearLayout.addView(cardview);
+        arr=new ArrayList<String>();
 
-        SubSNS cardview2 = new SubSNS(getActivity().getApplicationContext());
-        SubSNS cardview3 = new SubSNS(getActivity().getApplicationContext());
-        SubSNS cardview4 = new SubSNS(getActivity().getApplicationContext());
+        for(int i=0; i<3; i++){
+            Call<ResultStockPrice> call2 = api.getStockConclusionPrice("kospi", datastr[1][i], "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
 
-        SubSNS[] cardviewset = {cardview2,cardview3,cardview4};
+            call2.enqueue(new Callback<ResultStockPrice>() {
+                @Override
+                public void onResponse(Call<ResultStockPrice> call, Response<ResultStockPrice> response) {
+
+                    if(response.isSuccessful()) {
+                        ResultStockPrice result = response.body();
+                        //arr.add(result.getStockDetail().getTrdPrc());
+                        Toast.makeText(getContext(),result.getStockDetail().getTrdPrc(), Toast.LENGTH_LONG ).show();
+                    } else {
+                        Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                @Override
+                public void onFailure(Call<ResultStockPrice> call, Throwable t) {
+                    Toast.makeText(getContext(),"onFailure",Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
         for(int i=0;i<3;i++) {
 
@@ -63,7 +107,9 @@ public class SnsFeedFragment extends Fragment {
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_buy_price_num)).setText(datastr[5][i]);
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_buy_count_num)).setText(datastr[6][i]);
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price)).setText(datastr[7][i]);
-            ((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price_num)).setText(datastr[8][i]);
+
+
+
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_comment)).setText(datastr[9][i]);
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_user_name)).setText(datastr[10][i]);
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_ago_time)).setText(datastr[11][i]);
@@ -87,6 +133,21 @@ public class SnsFeedFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        getActivity().runOnUiThread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(1000);
+                            for(int i=0; i<3; i++) {
+                                //((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price_num)).setText(arr.get(i));
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
         return root;
     }
 }
