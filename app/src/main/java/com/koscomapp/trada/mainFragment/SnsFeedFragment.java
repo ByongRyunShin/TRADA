@@ -31,6 +31,7 @@ import retrofit2.Response;
 public class SnsFeedFragment extends Fragment {
     Handler m;
     ArrayList<String> tarr;
+    ArrayList<String> tarr2;
     SubSNS cardview2;
     SubSNS cardview3;
     SubSNS cardview4;
@@ -78,6 +79,7 @@ public class SnsFeedFragment extends Fragment {
         // name.setText(datastr[0][0]);
         linearLayout.addView(cardview);
         tarr=new ArrayList<String>();
+        tarr2=new ArrayList<String>();
 
         for(int i=0; i<3; i++){
             Call<ResultStockPrice> call2 = api.getStockConclusionPrice("kospi", datastr[1][i], "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
@@ -89,6 +91,7 @@ public class SnsFeedFragment extends Fragment {
                     if(response.isSuccessful()) {
                         ResultStockPrice result = response.body();
                         tarr.add(result.getStockDetail().getTrdPrc());
+                        tarr2.add(result.getStockDetail().getIsuSrtCd());
                         //Toast.makeText(getContext(),result.getStockDetail().getTrdPrc(), Toast.LENGTH_LONG ).show();
                     } else {
                         Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
@@ -121,6 +124,9 @@ public class SnsFeedFragment extends Fragment {
 
         }
         linearLayout.addView(cardview2);
+
+
+
         linearLayout.addView(cardview3);
         linearLayout.addView(cardview4);
 
@@ -145,7 +151,11 @@ public class SnsFeedFragment extends Fragment {
                 m.post(new Runnable() {
                     public void run() {
                         for(int i=0; i<3; i++) {
-                            ((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price_num)).setText(tarr.get(i));
+                            for(int j=0; j<3; j++){
+                                if(!tarr2.get(j).equals(datastr[1][i])){
+                                    ((TextView) cardviewset[i].findViewById(R.id.cs_tv_now_price_num)).setText(tarr.get(j));
+                                }
+                            }
                         }
                     }
                 });

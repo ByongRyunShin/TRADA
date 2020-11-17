@@ -23,19 +23,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginBtClicked(View v){
-        //if(id.getText().equals("test1") || id.getText().equals("test2")){
-            //if(pw.getText().equals("1234")){
+        if(!id.getText().equals("test1") || !id.getText().equals("test2")){
+            if(!pw.getText().equals("1234")){
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
 
                 finish();
-            //}
-            //else{
-            //    Toast.makeText(getApplicationContext(), "비밀번호가 틀렸습니다.", Toast.LENGTH_LONG).show();
-            //}
-        //}
-        //else{
-          //  Toast.makeText(getApplicationContext(), "없는 계정입니다.", Toast.LENGTH_LONG).show();
-        //}
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "비밀번호가 틀렸습니다.", Toast.LENGTH_LONG).show();
+            }
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "없는 계정입니다.", Toast.LENGTH_LONG).show();
+        }
     }
 }

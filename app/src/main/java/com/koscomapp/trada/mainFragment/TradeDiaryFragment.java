@@ -35,6 +35,7 @@ import retrofit2.Response;
 public class TradeDiaryFragment extends Fragment {
     Handler m;
     ArrayList<String> arr;
+    ArrayList<String> tarr;
     TextView temp;
     OpenAPIManager apiManager = new OpenAPIManager();
 
@@ -118,6 +119,7 @@ public class TradeDiaryFragment extends Fragment {
 
         Sub[] cardviewset = {cardview, cardview2,cardview3,cardview4,cardview5,cardview6,cardview7};
         arr=new ArrayList<String>();
+        tarr=new ArrayList<String>();
         for(int i=0; i<7; i++){
             Call<ResultStockPrice> call2 = api.getStockConclusionPrice("kospi", datastr[7][i], "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
 
@@ -128,6 +130,7 @@ public class TradeDiaryFragment extends Fragment {
                     if(response.isSuccessful()) {
                         ResultStockPrice result = response.body();
                         arr.add(result.getStockDetail().getTrdPrc());
+                        tarr.add(result.getStockDetail().getIsuSrtCd());
                     } else {
                         Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
                     }
@@ -193,8 +196,11 @@ public class TradeDiaryFragment extends Fragment {
                 m.post(new Runnable() {
                     public void run() {
                         for(int i=0; i<7; i++) {
-                            ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(arr.get(i));
-
+                            for(int j=0; j<7; j++){
+                                if(!tarr.get(j).equals(datastr[7][i])){
+                                    ((TextView) cardviewset[i].findViewById(R.id.custom_tv_curprice)).setText(arr.get(j));
+                                }
+                            }
                         }
                     }
                 });
