@@ -21,6 +21,7 @@
 
         <activity android:name=".LoginActivity" />
         <activity android:name=".SNSDetailActivity" />
+        <activity android:name=".DiaryDetailActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

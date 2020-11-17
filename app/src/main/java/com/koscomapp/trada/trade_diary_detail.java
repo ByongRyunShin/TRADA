@@ -60,5 +60,8 @@ public class trade_diary_detail extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_trade_diary_detail, container, false);
+
+
+
     }
 }
