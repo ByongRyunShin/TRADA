@@ -61,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="#대형주 #성장주 #IT #장기투자 #가치투자"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_ID"
             app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_ID" />
 
@@ -214,7 +215,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="거래일시"
+                            android:text="거래일시:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
@@ -274,7 +275,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="12dp"
-                            android:text="보유기간"
+                            android:text="보유기간:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_date_number"
@@ -284,8 +285,8 @@
                             android:id="@+id/cs_tv_detail_method"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="종류"
+                            android:layout_marginTop="2dp"
+                            android:text="종류:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
@@ -295,8 +296,8 @@
                             android:id="@+id/cs_tv_detail_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="매수가"
+                            android:layout_marginTop="2dp"
+                            android:text="매수가:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
@@ -320,7 +321,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="12dp"
-                            android:text="수량"
+                            android:text="수량:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_price_number"
@@ -344,7 +345,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="12dp"
-                            android:text="투자금"
+                            android:text="투자금:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_stock_number_number"
@@ -366,8 +367,8 @@
                             android:id="@+id/cs_tv_detail_price_now"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="현재가"
+                            android:layout_marginTop="2dp"
+                            android:text="현재가:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
@@ -391,7 +392,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="12dp"
-                            android:text="평가금액"
+                            android:text="평가금액:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_price_now_number"
@@ -415,7 +416,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="12dp"
-                            android:text="수익률"
+                            android:text="수익률:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_value_price_number"
@@ -449,8 +450,8 @@
                             android:id="@+id/cs_tv_detail_ratio"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="투자비중"
+                            android:layout_marginTop="2dp"
+                            android:text="투자비중:"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
@@ -467,6 +468,7 @@
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_ratio"
                             app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_ratio" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -487,17 +489,17 @@
 
                         <TextView
                             android:id="@+id/cs_tv_detail_memo"
-                            android:layout_width="340dp"
+                            android:layout_width="310dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:text="2차 전지 시장 전기차 시장 성장과 함께 매년 평균 30% 성장 예상\n최근 3년 평균 ROE 24%\n에코프로비엠 삼성SDI와 업무협약. 아산 3공장 증설 중(현 케파 200%)"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="4dp"
+                            android:text="2차 전지 시장 전기차 시장 성장과 함께 매년 30% 성장 예상\n최근 3년 평균 ROE 24%\n에코프로비엠 삼성SDI와 업무협약. 아산 3공장 증설 중(현 케파 200%)"
                             android:textColor="#000000"
                             android:textSize="12sp"
                             android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_memo_title" />
 
                         <TextView
                             android:id="@+id/cs_tv_detail_chart"
@@ -506,13 +508,13 @@
                             android:layout_marginTop="10dp"
                             android:text="차트"
                             android:textColor="#000000"
-                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_memo"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_memo_title"
                             app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_memo" />
 
                         <ImageView
                             android:id="@+id/cs_iv_detail_chart"
-                            android:layout_width="333dp"
-                            android:layout_height="133dp"
+                            android:layout_width="304dp"
+                            android:layout_height="110dp"
                             android:layout_marginStart="5dp"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
@@ -532,7 +534,7 @@
 
                         <TextView
                             android:id="@+id/cs_tv_detail_news_scrap"
-                            android:layout_width="wrap_content"
+                            android:layout_width="310dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:text="에코프로비엠, 3Q 호조 이어 실적 성장 지속-하이證 \n에코프로비엠 주가 상승 예상, “배터리소재 증설로 실적증가세 지속”"
@@ -571,11 +573,45 @@
                             android:src="@drawable/youtube2"
                             app:layout_constraintStart_toEndOf="@+id/cs_iv_detail_youtube1"
                             app:layout_constraintTop_toTopOf="@+id/cs_iv_detail_youtube1" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_memo_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:text="메모"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
         </ScrollView>
+
+        <ImageView
+            android:id="@+id/cs_iv_detail_dm"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/email"
+            app:layout_constraintBottom_toBottomOf="@+id/cs_tv_detail_ID"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/cs_iv_detail_addfriend"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:src="@drawable/addfriend"
+            app:layout_constraintEnd_toStartOf="@+id/cs_iv_detail_dm"
+            tools:layout_editor_absoluteY="92dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
