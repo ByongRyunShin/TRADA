@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_sns_detail">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6238CE">
+
+        <TextView
+            android:id="@+id/cs_tv_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="SNS"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.039" />
+
+        <ImageView
+            android:id="@+id/cs_iv_detail_face"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/profile6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:text="JuRinYi"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/cs_iv_detail_face"
+            app:layout_constraintTop_toTopOf="@+id/cs_iv_detail_face" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="#대형주 #성장주 #IT #장기투자 #가치투자"
+            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_ID"
+            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_ID" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="매매일지"
+            android:textColor="#00FFA3"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_ID"
+            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_tag" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_count_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="34"
+            android:textColor="#00FFA3"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_count"
+            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_count" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="소통"
+            android:textColor="#00FFA3"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_count_number"
+            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_count" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_friends_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="125"
+            android:textColor="#00FFA3"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_friends"
+            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_count" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="연간 수익률"
+            android:textColor="#00FFA3"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_friends_number"
+            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_count" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_return_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="37.5 %"
+            android:textColor="#00FFA3"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_return"
+            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_count" />
+
+        <TextView
+            android:id="@+id/cs_tv_detail_mention"
+            android:layout_width="340dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:text="안녕하세요~ 주식 5년차 주린이입니다~ 전 주로 KOSPI 우량주들에 투자하고있고 재무분석을 주로하고 있습니다."
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/cs_iv_detail_face"
+            app:layout_constraintTop_toBottomOf="@+id/cs_iv_detail_face" />
+
+        <ScrollView
+            android:layout_width="363dp"
+            android:layout_height="550dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:foregroundGravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_mention">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_stock_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="10dp"
+                            android:text="에코프로비엠"
+                            android:textColor="#000000"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_stock_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginLeft="7dp"
+                            android:text="247540"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_stock_name" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="거래일시"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_stock_name" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_date_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="2020-11-16 17:00"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_date"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_date" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_stock_market"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="코스닥"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_stock_code" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_period_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="2일"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_period"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_date" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_method_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="시간외 단일가 매수"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_method"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_method" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_period"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:text="보유기간"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_date_number"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_date" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_method"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="종류"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_date" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="매수가"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_method" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_price_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="140,100"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_price"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_stock_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:text="수량"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_price_number"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_stock_number_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="50"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_stock_number"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_invest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:text="투자금"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_stock_number_number"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_invest_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:text="7,005,000"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_invest"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_price_now"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="현재가"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_price" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_price_now_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="144,200"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_price_now"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_value_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:text="평가금액"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_price_now_number"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_value_price_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="12,200,000"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_value_price"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_profit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="12dp"
+                            android:text="수익률"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_value_price_number"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_profit_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="6.5 %"
+                            android:textColor="#0C2CFC"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_profit_symbol"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_profit_symbol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="▲"
+                            android:textColor="#0C2CFC"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_profit"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_ratio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="투자비중"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_stock_name"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_price_now" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_ratio_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="23.4 %"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_ratio"
+                            app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_ratio" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFF">
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_memo"
+                            android:layout_width="340dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="2차 전지 시장 전기차 시장 성장과 함께 매년 평균 30% 성장 예상\n최근 3년 평균 ROE 24%\n에코프로비엠 삼성SDI와 업무협약. 아산 3공장 증설 중(현 케파 200%)"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_chart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="차트"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_memo"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_memo" />
+
+                        <ImageView
+                            android:id="@+id/cs_iv_detail_chart"
+                            android:layout_width="333dp"
+                            android:layout_height="133dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/chart"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_chart"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_chart" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_news"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="뉴스"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_chart"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_iv_detail_chart" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_news_scrap"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="에코프로비엠, 3Q 호조 이어 실적 성장 지속-하이證 \n에코프로비엠 주가 상승 예상, “배터리소재 증설로 실적증가세 지속”"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_news"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_news" />
+
+                        <TextView
+                            android:id="@+id/cs_tv_detail_youtube"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="유튜브"
+                            android:textColor="#000000"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_news"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_news_scrap" />
+
+                        <ImageView
+                            android:id="@+id/cs_iv_detail_youtube1"
+                            android:layout_width="120dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="4dp"
+                            android:src="@drawable/youtube1"
+                            app:layout_constraintStart_toStartOf="@+id/cs_tv_detail_youtube"
+                            app:layout_constraintTop_toBottomOf="@+id/cs_tv_detail_youtube" />
+
+                        <ImageView
+                            android:id="@+id/cs_iv_detail_youtube2"
+                            android:layout_width="120dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:src="@drawable/youtube2"
+                            app:layout_constraintStart_toEndOf="@+id/cs_iv_detail_youtube1"
+                            app:layout_constraintTop_toTopOf="@+id/cs_iv_detail_youtube1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

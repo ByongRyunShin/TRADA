@@ -1,5 +1,6 @@
 package com.koscomapp.trada.mainFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.koscomapp.trada.MainActivity;
 import com.koscomapp.trada.R;
+import com.koscomapp.trada.SNSDetailActivity;
 import com.koscomapp.trada.SubSNS;
 
 public class SnsFeedFragment extends Fragment {
@@ -47,10 +50,7 @@ public class SnsFeedFragment extends Fragment {
         SubSNS cardview3 = new SubSNS(getActivity().getApplicationContext());
         SubSNS cardview4 = new SubSNS(getActivity().getApplicationContext());
 
-
         SubSNS[] cardviewset = {cardview2,cardview3,cardview4};
-
-
 
         for(int i=0;i<3;i++) {
 
@@ -68,11 +68,18 @@ public class SnsFeedFragment extends Fragment {
             ((TextView) cardviewset[i].findViewById(R.id.cs_tv_16)).setText(datastr[11][i]);
 
         }
-
-
         linearLayout.addView(cardview2);
         linearLayout.addView(cardview3);
         linearLayout.addView(cardview4);
+
+        cardview4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // do whatever you want to do on click (to launch any fragment or activity you need to put intent here.)
+                Intent intent = new Intent(getActivity().getBaseContext(), SNSDetailActivity.class);
+                startActivity(intent);
+            }
+        });
         return root;
     }
 }
