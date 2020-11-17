@@ -1,5 +1,6 @@
 package com.koscomapp.trada.mainFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +12,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.koscomapp.trada.DiaryDetailActivity;
 import com.koscomapp.trada.R;
+import com.koscomapp.trada.SNSDetailActivity;
 import com.koscomapp.trada.Sub;
 
 public class TradeDiaryFragment extends Fragment {
@@ -89,6 +92,15 @@ public class TradeDiaryFragment extends Fragment {
         linearLayout.addView(cardview6);
         linearLayout.addView(cardview7);
 
+
+        cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // do whatever you want to do on click (to launch any fragment or activity you need to put intent here.)
+                Intent intent = new Intent(getActivity().getBaseContext(), DiaryDetailActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return root;
     }

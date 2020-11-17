@@ -610,8 +610,8 @@
             android:layout_marginEnd="2dp"
             android:layout_marginRight="2dp"
             android:src="@drawable/addfriend"
-            app:layout_constraintEnd_toStartOf="@+id/cs_iv_detail_dm"
-            tools:layout_editor_absoluteY="92dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/cs_tv_detail_ID"
+            app:layout_constraintEnd_toStartOf="@+id/cs_iv_detail_dm" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

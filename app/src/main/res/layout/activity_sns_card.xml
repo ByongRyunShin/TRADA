@@ -56,6 +56,7 @@
                 android:layout_marginTop="4dp"
                 android:text="134,000"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/cs_tv_7"
                 app:layout_constraintTop_toBottomOf="@+id/cs_tv_2" />
 
@@ -67,6 +68,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
                 android:text="수량"
+                android:textSize="12sp"
                 android:textColor="#000000"
                 app:layout_constraintStart_toEndOf="@+id/cs_tv_8"
                 app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
@@ -79,6 +81,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="4dp"
                 android:text="10"
+                android:textSize="12sp"
                 android:textColor="#000000"
                 app:layout_constraintStart_toEndOf="@+id/cs_tv_9"
                 app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
@@ -91,6 +94,7 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="4dp"
                 android:text="135,000"
+                android:textSize="12sp"
                 android:textColor="#000000"
                 app:layout_constraintStart_toEndOf="@+id/cs_tv_11"
                 app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
@@ -125,14 +129,15 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
                 android:text="현재가"
+                android:textSize="12sp"
                 android:textColor="#000000"
                 app:layout_constraintStart_toEndOf="@+id/cs_tv_10"
                 app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
 
             <ImageView
                 android:id="@+id/cs_iv_1"
-                android:layout_width="54dp"
-                android:layout_height="59dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="10dp"
@@ -173,6 +178,7 @@
                 android:layout_marginTop="4dp"
                 android:text="매수가"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/cs_tv_1"
                 app:layout_constraintTop_toBottomOf="@+id/cs_tv_1" />
 
@@ -191,7 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="#대형주 #성장주 #IT #장기투자 #가치투자"
+                android:text="#대형주 #성장주 #IT #장기투자"
                 android:textColor="#757575"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/cs_tv_1"
