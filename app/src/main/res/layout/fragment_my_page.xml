@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,9 +8,194 @@
     android:background="#6238CE">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/mtextView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:text="팔로워"
+            android:textColor="#00FFA3"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/mtextView10"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView9" />
+
+        <TextView
+            android:id="@+id/mtextView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="등록 일정"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/mtextView15"
+            app:layout_constraintTop_toBottomOf="@+id/mimageView1" />
+
+        <ImageView
+            android:id="@+id/mimageView7"
+            android:layout_width="63dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            app:layout_constraintStart_toEndOf="@+id/mimageView6"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView15"
+            app:srcCompat="@drawable/underline" />
+
+        <TextView
+            android:id="@+id/mtextView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:text="작성글"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/mtextView14"
+            app:layout_constraintTop_toBottomOf="@+id/mimageView1" />
+
+        <ImageView
+            android:id="@+id/mimageView6"
+            android:layout_width="55dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintStart_toEndOf="@+id/mimageView9"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView15"
+            app:srcCompat="@drawable/underline" />
+
+        <ImageView
+            android:id="@+id/mimageView9"
+            android:layout_width="62dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView14"
+            app:srcCompat="@drawable/underline" />
+
+        <TextView
+            android:id="@+id/mtextView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            android:layout_marginTop="20dp"
+            android:text="구독 태그"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mimageView1" />
+
+        <TextView
+            android:id="@+id/mtextView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:text="팔로잉"
+            android:textColor="#00FFA3"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/mimageView1"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView9" />
+
+        <TextView
+            android:id="@+id/mtextView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:text="258"
+            android:textColor="#00FFA3"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/mtextView11"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView9" />
+
+        <TextView
+            android:id="@+id/mtextView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="david88@gmail.com"
+            android:textColor="#A9FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/mimageView1"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView4" />
+
+        <ImageView
+            android:id="@+id/mimageView1"
+            android:layout_width="77dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_profile" />
+
+        <TextView
+            android:id="@+id/mtextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="David Jones"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/mimageView1"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView" />
+
+        <TextView
+            android:id="@+id/mtextView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:text="214"
+            android:textColor="#00FFA3"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toEndOf="@+id/mtextView12"
+            app:layout_constraintTop_toBottomOf="@+id/mtextView9" />
+
+        <TextView
+            android:id="@+id/mtextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="My Page"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.039" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </FrameLayout>
