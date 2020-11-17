@@ -14,6 +14,17 @@
         android:layout_height="match_parent"
         android:background="#6238CE">
 
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="58dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="336dp"
+            android:layout_marginLeft="336dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_profile_online" />
+
         <TextView
             android:id="@+id/cs_tv_detail_title"
             android:layout_width="wrap_content"
@@ -429,7 +440,7 @@
                             android:layout_marginStart="4dp"
                             android:layout_marginLeft="4dp"
                             android:text="6.5 %"
-                            android:textColor="#0C2CFC"
+                            android:textColor="#FF0A0A"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_profit_symbol"
                             app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />
@@ -441,7 +452,7 @@
                             android:layout_marginStart="4dp"
                             android:layout_marginLeft="4dp"
                             android:text="▲"
-                            android:textColor="#0C2CFC"
+                            android:textColor="#FF0A0A"
                             android:textSize="12sp"
                             app:layout_constraintStart_toEndOf="@+id/cs_tv_detail_profit"
                             app:layout_constraintTop_toTopOf="@+id/cs_tv_detail_price_now" />

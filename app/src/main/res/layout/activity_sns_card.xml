@@ -26,42 +26,42 @@
             android:background="#FFFFFF">
 
             <TextView
-                android:id="@+id/cs_tv_4"
+                android:id="@+id/cs_tv_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_marginRight="4dp"
                 android:text="▲"
-                android:textColor="#0C2CFC"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_1"
-                app:layout_constraintEnd_toStartOf="@+id/cs_tv_5" />
+                android:textColor="#FF0A0A"
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_name"
+                app:layout_constraintEnd_toStartOf="@+id/cs_tv_return_num" />
 
             <TextView
-                android:id="@+id/cs_tv_3"
+                android:id="@+id/cs_tv_market"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:layout_marginLeft="2dp"
                 android:text="KOSPI"
                 android:textColor="#757575"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_1"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_2" />
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_name"
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_code" />
 
             <TextView
-                android:id="@+id/cs_tv_8"
+                android:id="@+id/cs_tv_buy_price_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="4dp"
-                android:text="134,000"
+                android:text="234,000"
                 android:textColor="#000000"
                 android:textSize="12sp"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_7"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_2" />
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_buy_price"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_code" />
 
             <TextView
-                android:id="@+id/cs_tv_9"
+                android:id="@+id/cs_tv_buy_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -70,11 +70,11 @@
                 android:text="수량"
                 android:textSize="12sp"
                 android:textColor="#000000"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_8"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_buy_price_num"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_market" />
 
             <TextView
-                android:id="@+id/cs_tv_10"
+                android:id="@+id/cs_tv_buy_count_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -83,71 +83,69 @@
                 android:text="10"
                 android:textSize="12sp"
                 android:textColor="#000000"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_9"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_buy_count"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_market" />
 
             <TextView
-                android:id="@+id/cs_tv_12"
+                android:id="@+id/cs_tv_now_price_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="4dp"
-                android:text="135,000"
-                android:textSize="12sp"
+                android:text="275,000"
                 android:textColor="#000000"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_11"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_now_price"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_market" />
 
             <TextView
-                android:id="@+id/cs_tv_5"
+                android:id="@+id/cs_tv_return_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:text="34.5"
-                android:textColor="#0C2CFC"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_1"
-                app:layout_constraintEnd_toStartOf="@+id/cs_tv_6" />
+                android:text="17.5"
+                android:textColor="#FF0A0A"
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_name"
+                app:layout_constraintEnd_toStartOf="@+id/cs_tv_percent" />
 
             <TextView
-                android:id="@+id/cs_tv_6"
+                android:id="@+id/cs_tv_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:text="%"
-                android:textColor="#0C2CFC"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_1"
+                android:textColor="#FF0A0A"
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_name"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/cs_tv_11"
+                android:id="@+id/cs_tv_now_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="4dp"
-                android:text="현재가"
-                android:textSize="12sp"
+                android:text="매도가"
                 android:textColor="#000000"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_10"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_3" />
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_buy_count_num"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_market" />
 
             <ImageView
-                android:id="@+id/cs_iv_1"
+                android:id="@+id/cs_iv_user_face"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="10dp"
-                android:foreground="@drawable/profile4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/profile4" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/cs_tv_1"
+                android:id="@+id/cs_tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="85dp"
@@ -161,76 +159,76 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/cs_tv_2"
+                android:id="@+id/cs_tv_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:text="035420"
                 android:textColor="#757575"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_1"
-                app:layout_constraintStart_toEndOf="@+id/cs_tv_1" />
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_name"
+                app:layout_constraintStart_toEndOf="@+id/cs_tv_name" />
 
             <TextView
-                android:id="@+id/cs_tv_7"
+                android:id="@+id/cs_tv_buy_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="매수가"
                 android:textColor="#000000"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/cs_tv_1"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_1" />
+                app:layout_constraintStart_toStartOf="@+id/cs_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_name" />
 
             <TextView
-                android:id="@+id/cs_tv_15"
+                android:id="@+id/cs_tv_ago_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2 mins ago"
                 android:textColor="#757575"
                 android:textSize="10sp"
-                app:layout_constraintStart_toStartOf="@+id/cs_iv_1"
+                app:layout_constraintStart_toStartOf="@+id/cs_iv_user_face"
                 app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
             <TextView
-                android:id="@+id/cs_tv_16"
+                android:id="@+id/cs_tv_hash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="#대형주 #성장주 #IT #장기투자"
                 android:textColor="#757575"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/cs_tv_1"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_13" />
+                app:layout_constraintStart_toStartOf="@+id/cs_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_comment" />
 
             <TextView
-                android:id="@+id/cs_tv_13"
+                android:id="@+id/cs_tv_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="코로나 백신 뉴스 후 언택트주 투자 매력 감소 \n12M PER 고려 목표가격 도달. 매도 "
                 android:textColor="#000000"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/cs_tv_1"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_7" />
+                app:layout_constraintStart_toStartOf="@+id/cs_tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_buy_price" />
 
             <TextView
-                android:id="@+id/cs_tv_14"
+                android:id="@+id/cs_tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Johnber"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/cs_iv_1"
-                app:layout_constraintTop_toBottomOf="@+id/cs_iv_1" />
+                app:layout_constraintStart_toStartOf="@+id/cs_iv_user_face"
+                app:layout_constraintTop_toBottomOf="@+id/cs_iv_user_face" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:foreground="@drawable/addfriend"
-                app:layout_constraintStart_toStartOf="@+id/cs_iv_1"
-                app:layout_constraintTop_toBottomOf="@+id/cs_tv_14"
+                app:layout_constraintStart_toStartOf="@+id/cs_iv_user_face"
+                app:layout_constraintTop_toBottomOf="@+id/cs_tv_user_name"
                 app:srcCompat="@drawable/addfriend" />
 
             <ImageView
@@ -240,7 +238,7 @@
                 android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:foreground="@drawable/heart"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_16"
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_hash"
                 app:layout_constraintEnd_toStartOf="@+id/imageView11"
                 app:srcCompat="@drawable/heart" />
 
@@ -251,7 +249,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:foreground="@drawable/comment"
-                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_16"
+                app:layout_constraintBottom_toBottomOf="@+id/cs_tv_hash"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/comment" />
 
