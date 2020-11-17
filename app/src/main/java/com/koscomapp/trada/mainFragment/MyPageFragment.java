@@ -18,7 +18,6 @@ public class MyPageFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_my_page, container, false);
         //Type here
-
         return root;
     }
 }
