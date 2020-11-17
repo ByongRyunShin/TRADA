@@ -26,6 +26,7 @@ public class OpenAPIManager {
                 if(response.isSuccessful()) {
                     ResultStockPrice result = response.body();
                     rStockPrice=result.getStockDetail().getTrdPrc();
+                    Toast.makeText(appCxt, result.getStockDetail().getTrdPrc(), Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(appCxt, response.message(), Toast.LENGTH_SHORT).show();
                 }

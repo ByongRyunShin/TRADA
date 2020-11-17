@@ -13,23 +13,40 @@ import android.widget.ScrollView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.XAxis.XAxisPosition;
 import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IFillFormatter;
+import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.koscomapp.trada.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StatFragment extends Fragment {
 
-    PieChart pieChartType;
+    private LineChart linechart;
+    private PieChart pieChartType, pieChartCap, pieChartVal;
     private BarChart chartProfit;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,8 +62,8 @@ public class StatFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                scrollView.scrollTo(0,0);
-
+                scrollView.scrollTo(0, 0);
+                chartProfit.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
             }
         });
@@ -55,9 +72,11 @@ public class StatFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                scrollView.scrollTo(0,1450);
+                scrollView.scrollTo(0, 1450);
                 //execute Chart Animation
                 pieChartType.animateY(1000, Easing.EaseInOutCubic);
+                pieChartCap.animateY(1000, Easing.EaseInOutCubic);
+                pieChartVal.animateY(1000, Easing.EaseInOutCubic);
 
             }
         });
@@ -66,9 +85,9 @@ public class StatFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                scrollView.scrollTo(0,2900);
+                scrollView.scrollTo(0, 2900);
 
-
+                linechart.animateXY(2000, 2000);
             }
         });
 
@@ -112,37 +131,36 @@ public class StatFragment extends Fragment {
         left.setZeroLineWidth(0.7f);
         chartProfit.getAxisRight().setEnabled(false);
         chartProfit.getLegend().setEnabled(false);
-/*
-        final List<Data> data = new ArrayList<>();
-        data.add(new Data(0f, -224.1f, "12-29"));
-        data.add(new Data(1f, 238.5f, "12-30"));
-        data.add(new Data(2f, 1280.1f, "12-31"));
-        data.add(new Data(3f, -442.3f, "01-01"));
-        data.add(new Data(4f, -2280.1f, "01-02"));
 
-        xAxis.setValueFormatter(new IAxisValueFormatter() {
+        final List<Data> data3 = new ArrayList<>();
+        data3.add(new Data(0f, -224.1f, "12-29"));
+        data3.add(new Data(1f, 238.5f, "12-30"));
+        data3.add(new Data(2f, 1280.1f, "12-31"));
+        data3.add(new Data(3f, -442.3f, "01-01"));
+        data3.add(new Data(4f, -2280.1f, "01-02"));
+
+        xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
-                return data.get(Math.min(Math.max((int) value, 0), data.size()-1)).xAxisValue;
+                return data3.get(Math.min(Math.max((int) value, 0), data3.size() - 1)).xAxisValue;
             }
         });
 
-        setData(data);
-*/
+        setData(data3);
 
-
-        //PieChart example
-        pieChartType = (PieChart)root.findViewById(R.id.piechartType);
+        //PieChart Type example
+        pieChartType = (PieChart) root.findViewById(R.id.piechartType);
 
         pieChartType.setUsePercentValues(true);
         pieChartType.getDescription().setEnabled(false);
-        pieChartType.setExtraOffsets(5,10,5,5);
-
+        pieChartType.setExtraOffsets(5, 10, 5, 5);
+        pieChartType.setRotationAngle(40.f);
         pieChartType.setDragDecelerationFrictionCoef(0.95f);
 
         pieChartType.setDrawHoleEnabled(false);
         pieChartType.setHoleColor(Color.WHITE);
         pieChartType.setTransparentCircleRadius(61f);
+        pieChartType.setDrawEntryLabels(false);
 
         ArrayList<PieEntry> yValues = new ArrayList<PieEntry>();
         ArrayList<Integer> colors = new ArrayList<>();
@@ -150,46 +168,320 @@ public class StatFragment extends Fragment {
         colors.add(getResources().getColor(R.color.themecolor1));
         colors.add(getResources().getColor(R.color.themecolor2));
         colors.add(getResources().getColor(R.color.themecolor3));
-        colors.add(getResources().getColor(R.color.themecolor4));
+        colors.add(getResources().getColor(R.color.blue));
         colors.add(getResources().getColor(R.color.themecolor5));
+        colors.add(getResources().getColor(R.color.black));
 
 
-        yValues.add(new PieEntry(58.2f,"바이오"));
-        yValues.add(new PieEntry(14.5f,"통신"));
-        yValues.add(new PieEntry(11.3f,"철강"));
-        yValues.add(new PieEntry(9.9f,"IT"));
-        yValues.add(new PieEntry(5.8f,"석유화학"));
-        yValues.add(new PieEntry(0.3f,"기타"));
-
-        //우측 레이블
-        Description description = new Description();
-        description.setText("종목 테마"); //라벨
-        description.setTextSize(15);
-        pieChartType.setDescription(description);
+        yValues.add(new PieEntry(58.2f, "바이오"));
+        yValues.add(new PieEntry(14.5f, "통신"));
+        yValues.add(new PieEntry(11.3f, "철강"));
+        yValues.add(new PieEntry(9.9f, "IT"));
+        yValues.add(new PieEntry(5.8f, "석유화학"));
+        yValues.add(new PieEntry(0.3f, "기타"));
 
         pieChartType.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
-        PieDataSet dataSet = new PieDataSet(yValues,"Countries");
+        PieDataSet dataSet = new PieDataSet(yValues, "");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
+        dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet.setValueLinePart1Length(0.8f);
+        dataSet.setValueLinePart2Length(.8f);
+        dataSet.setValueLinePart1OffsetPercentage(1.f);
+        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         dataSet.setColors(colors);
 
         Legend l = pieChartType.getLegend();
-        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l.setForm(Legend.LegendForm.CIRCLE);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
         l.setXEntrySpace(7);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.CENTER);
         l.setYEntrySpace(5);
-
 
 
         PieData data = new PieData((dataSet));
         data.setValueTextSize(10f);
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(Color.BLACK);
 
-        pieChartType.getLegend().setEnabled(false);
+        pieChartType.getLegend().setEnabled(true);
 
         pieChartType.setData(data);
 
+
+        //PieChart Captial example
+        pieChartCap = (PieChart) root.findViewById(R.id.piechartCap);
+
+        pieChartCap.setUsePercentValues(true);
+        pieChartCap.getDescription().setEnabled(false);
+        pieChartCap.setExtraOffsets(5, 10, 5, 5);
+        pieChartCap.setRotationAngle(40.f);
+        pieChartCap.setDragDecelerationFrictionCoef(0.95f);
+
+        pieChartCap.setDrawHoleEnabled(false);
+        pieChartCap.setHoleColor(Color.WHITE);
+        pieChartCap.setTransparentCircleRadius(61f);
+        pieChartCap.setDrawEntryLabels(false);
+
+        ArrayList<PieEntry> yValues1 = new ArrayList<PieEntry>();
+        ArrayList<Integer> colors1 = new ArrayList<>();
+
+        colors1.add(getResources().getColor(R.color.themecolor1));
+        colors1.add(getResources().getColor(R.color.themecolor2));
+        colors1.add(getResources().getColor(R.color.themecolor3));
+        colors1.add(getResources().getColor(R.color.blue));
+
+
+        yValues1.add(new PieEntry(58.2f, "바이오"));
+        yValues1.add(new PieEntry(14.5f, "통신"));
+        yValues1.add(new PieEntry(11.3f, "철강"));
+        yValues1.add(new PieEntry(9.9f, "IT"));
+
+        pieChartCap.animateY(1000, Easing.EaseInOutCubic); //애니메이션
+
+        PieDataSet dataSet1 = new PieDataSet(yValues1, "");
+        dataSet1.setSliceSpace(3f);
+        dataSet1.setSelectionShift(5f);
+        dataSet1.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet1.setValueLinePart1Length(0.8f);
+        dataSet1.setValueLinePart2Length(.8f);
+        dataSet1.setValueTextColor(Color.BLACK);
+        dataSet1.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet1.setColors(colors);
+
+        Legend l1 = pieChartCap.getLegend();
+        l1.setForm(Legend.LegendForm.CIRCLE);
+        l1.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l1.setXEntrySpace(7);
+        l1.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        l1.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l1.setYEntrySpace(5);
+
+
+        PieData data1 = new PieData(dataSet1);
+        data1.setValueTextSize(10f);
+        data1.setValueTextColor(Color.BLACK);
+
+        pieChartCap.getLegend().setEnabled(true);
+
+        pieChartCap.setData(data1);
+
+
+        //PieChart Value example
+        pieChartVal = (PieChart) root.findViewById(R.id.piechartVal);
+
+        pieChartVal.setUsePercentValues(true);
+        pieChartVal.getDescription().setEnabled(false);
+        pieChartVal.setExtraOffsets(5, 10, 5, 5);
+        pieChartVal.setRotationAngle(40.f);
+        pieChartVal.setDragDecelerationFrictionCoef(0.95f);
+
+        pieChartVal.setDrawHoleEnabled(false);
+        pieChartVal.setHoleColor(Color.WHITE);
+        pieChartVal.setTransparentCircleRadius(61f);
+        pieChartVal.setDrawEntryLabels(false);
+
+        ArrayList<PieEntry> yValues2 = new ArrayList<PieEntry>();
+        ArrayList<Integer> colors2 = new ArrayList<>();
+
+        colors2.add(getResources().getColor(R.color.themecolor1));
+        colors2.add(getResources().getColor(R.color.themecolor2));
+        colors2.add(getResources().getColor(R.color.themecolor3));
+        colors2.add(getResources().getColor(R.color.blue));
+
+
+        yValues2.add(new PieEntry(58.2f, "바이오"));
+        yValues2.add(new PieEntry(14.5f, "통신"));
+        yValues2.add(new PieEntry(11.3f, "철강"));
+        yValues2.add(new PieEntry(9.9f, "IT"));
+
+        pieChartVal.animateY(1000, Easing.EaseInOutCubic); //애니메이션
+
+        PieDataSet dataSet2 = new PieDataSet(yValues2, "");
+        dataSet2.setSliceSpace(3f);
+        dataSet2.setSelectionShift(5f);
+        dataSet2.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet2.setValueLinePart1Length(0.8f);
+        dataSet2.setValueLinePart2Length(.8f);
+        dataSet2.setValueTextColor(Color.BLACK);
+        dataSet2.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        dataSet2.setColors(colors2);
+
+        Legend l2 = pieChartVal.getLegend();
+        l2.setForm(Legend.LegendForm.CIRCLE);
+        l2.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l2.setXEntrySpace(7);
+        l2.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        l2.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l2.setYEntrySpace(5);
+
+
+        PieData data2 = new PieData(dataSet2);
+        data2.setValueTextSize(10f);
+        data2.setValueTextColor(Color.BLACK);
+
+        pieChartVal.getLegend().setEnabled(true);
+
+        pieChartVal.setData(data2);
+
+
+        //Line Chart
+        linechart = root.findViewById(R.id.chartCubic);
+        linechart.setViewPortOffsets(0, 0, 0, 0);
+        linechart.setBackgroundColor(Color.rgb(187, 134, 252));
+
+        // no description text
+        linechart.getDescription().setEnabled(false);
+
+        // enable touch gestures
+        linechart.setTouchEnabled(true);
+
+        // enable scaling and dragging
+        linechart.setDragEnabled(true);
+        linechart.setScaleEnabled(true);
+
+        // if disabled, scaling can be done on x- and y-axis separately
+        linechart.setPinchZoom(false);
+
+        linechart.setDrawGridBackground(false);
+        linechart.setMaxHighlightDistance(300);
+
+        XAxis x = linechart.getXAxis();
+        x.setEnabled(false);
+
+        YAxis y = linechart.getAxisLeft();
+        y.setLabelCount(6, false);
+        y.setTextColor(Color.WHITE);
+        y.setPosition(YAxis.YAxisLabelPosition.INSIDE_CHART);
+        y.setDrawGridLines(false);
+        y.setAxisLineColor(Color.WHITE);
+
+        linechart.getAxisRight().setEnabled(false);
+
+        linechart.getLegend().setEnabled(false);
+
+        linechart.animateXY(2000, 2000);
+
+        // don't forget to refresh the drawing
+        setDataLine(45, 100);
+
+        // redraw
+        linechart.invalidate();
         //
         return root;
+    }
+
+    private void setData(List<Data> dataList) {
+
+        ArrayList<BarEntry> values = new ArrayList<>();
+        List<Integer> colors = new ArrayList<>();
+
+        int green = Color.rgb(110, 190, 102);
+        int red = Color.rgb(211, 74, 88);
+
+        for (int i = 0; i < dataList.size(); i++) {
+
+            Data d = dataList.get(i);
+            BarEntry entry = new BarEntry(d.xValue, d.yValue);
+            values.add(entry);
+
+            // specific colors
+            if (d.yValue >= 0)
+                colors.add(red);
+            else
+                colors.add(green);
+        }
+
+        BarDataSet set;
+
+        if (chartProfit.getData() != null &&
+                chartProfit.getData().getDataSetCount() > 0) {
+            set = (BarDataSet) chartProfit.getData().getDataSetByIndex(0);
+            set.setValues(values);
+            chartProfit.getData().notifyDataChanged();
+            chartProfit.notifyDataSetChanged();
+        } else {
+            set = new BarDataSet(values, "Values");
+            set.setColors(colors);
+            set.setValueTextColors(colors);
+
+            BarData data = new BarData(set);
+            data.setValueTextSize(13f);
+            //data.setValueTypeface(tfRegular);
+            data.setValueFormatter(new ValueFormatter() {
+
+            });
+            data.setBarWidth(0.8f);
+
+            chartProfit.setData(data);
+            chartProfit.invalidate();
+        }
+
+        chartProfit.animateY(1000, Easing.EaseInOutCubic); //애니메이션
+    }
+
+    private class Data {
+
+        final String xAxisValue;
+        final float yValue;
+        final float xValue;
+
+        Data(float xValue, float yValue, String xAxisValue) {
+            this.xAxisValue = xAxisValue;
+            this.yValue = yValue;
+            this.xValue = xValue;
+        }
+    }
+
+    private void setDataLine(int count, float range) {
+
+        ArrayList<Entry> values = new ArrayList<>();
+
+        for (int i = 0; i < count; i++) {
+            float val = (float) (Math.random() * (range + 1)) + 20;
+            values.add(new Entry(i, val));
+        }
+
+        LineDataSet set1;
+
+        if (linechart.getData() != null &&
+                linechart.getData().getDataSetCount() > 0) {
+            set1 = (LineDataSet) linechart.getData().getDataSetByIndex(0);
+            set1.setValues(values);
+            linechart.getData().notifyDataChanged();
+            linechart.notifyDataSetChanged();
+        } else {
+            // create a dataset and give it a type
+            set1 = new LineDataSet(values, "DataSet 1");
+
+            set1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+            set1.setCubicIntensity(0.2f);
+            set1.setDrawFilled(true);
+            set1.setDrawCircles(false);
+            set1.setLineWidth(1.8f);
+            set1.setCircleRadius(4f);
+            set1.setCircleColor(Color.WHITE);
+            set1.setHighLightColor(Color.rgb(244, 117, 117));
+            set1.setColor(Color.WHITE);
+            set1.setFillColor(Color.WHITE);
+            set1.setFillAlpha(100);
+            set1.setDrawHorizontalHighlightIndicator(false);
+            set1.setFillFormatter(new IFillFormatter() {
+                @Override
+                public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
+                    return linechart.getAxisLeft().getAxisMinimum();
+                }
+            });
+
+            // create a data object with the data sets
+            LineData data = new LineData(set1);
+            data.setValueTextSize(9f);
+            data.setDrawValues(false);
+
+            // set data
+            linechart.setData(data);
+        }
     }
 }
