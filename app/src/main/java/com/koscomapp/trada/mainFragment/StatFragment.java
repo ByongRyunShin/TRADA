@@ -15,6 +15,7 @@ import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.PieData;
@@ -144,30 +145,45 @@ public class StatFragment extends Fragment {
         pieChartType.setTransparentCircleRadius(61f);
 
         ArrayList<PieEntry> yValues = new ArrayList<PieEntry>();
+        ArrayList<Integer> colors = new ArrayList<>();
 
-        yValues.add(new PieEntry(34f,"Japen"));
-        yValues.add(new PieEntry(23f,"USA"));
-        yValues.add(new PieEntry(14f,"UK"));
-        yValues.add(new PieEntry(35f,"India"));
-        yValues.add(new PieEntry(40f,"Russia"));
-        yValues.add(new PieEntry(40f,"Korea"));
+        colors.add(getResources().getColor(R.color.themecolor1));
+        colors.add(getResources().getColor(R.color.themecolor2));
+        colors.add(getResources().getColor(R.color.themecolor3));
+        colors.add(getResources().getColor(R.color.themecolor4));
+        colors.add(getResources().getColor(R.color.themecolor5));
+
+
+        yValues.add(new PieEntry(58.2f,"바이오"));
+        yValues.add(new PieEntry(14.5f,"통신"));
+        yValues.add(new PieEntry(11.3f,"철강"));
+        yValues.add(new PieEntry(9.9f,"IT"));
+        yValues.add(new PieEntry(5.8f,"석유화학"));
+        yValues.add(new PieEntry(0.3f,"기타"));
 
         //우측 레이블
         Description description = new Description();
-        description.setText("세계 국가"); //라벨
+        description.setText("종목 테마"); //라벨
         description.setTextSize(15);
-//        pieChartType.setDescription(description);
+        pieChartType.setDescription(description);
 
         pieChartType.animateY(1000, Easing.EaseInOutCubic); //애니메이션
 
         PieDataSet dataSet = new PieDataSet(yValues,"Countries");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
-        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+        dataSet.setColors(colors);
+
+        Legend l = pieChartType.getLegend();
+        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l.setXEntrySpace(7);
+        l.setYEntrySpace(5);
+
+
 
         PieData data = new PieData((dataSet));
         data.setValueTextSize(10f);
-        data.setValueTextColor(Color.YELLOW);
+        data.setValueTextColor(Color.WHITE);
 
         pieChartType.getLegend().setEnabled(false);
 

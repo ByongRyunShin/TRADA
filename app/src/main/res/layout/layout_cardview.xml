@@ -31,11 +31,8 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="8dp"
-                android:foreground="@drawable/icon_buy"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/custom_tv_date"
-                app:srcCompat="@drawable/icon_buy"
-                tools:srcCompat="@drawable/icon_buy" />
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_date" />
 
             <ImageView
                 android:id="@+id/custom_iv_arrow"
@@ -43,11 +40,9 @@
                 android:layout_height="18dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="26dp"
-                android:foreground="@drawable/up"
+                android:layout_marginTop="28dp"
                 app:layout_constraintStart_toEndOf="@+id/custom_tv_curprice"
-                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name"
-                app:srcCompat="@drawable/up" />
+                app:layout_constraintTop_toBottomOf="@+id/custom_tv_name" />
 
             <TextView
                 android:id="@+id/custom_tv_percent"

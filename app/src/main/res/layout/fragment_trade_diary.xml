@@ -195,7 +195,7 @@
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="363dp"
-            android:layout_height="600dp"
+            android:layout_height="480dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="150dp"
