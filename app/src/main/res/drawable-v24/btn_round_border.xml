@@ -4,7 +4,6 @@
 <item>
   <layer-list>
 
-    <!-- background (위로) -->
     <item android:bottom="2dp">
       <shape>
         <corners android:radius="20dp" />

@@ -41,7 +41,7 @@
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="363dp"
-            android:layout_height="600dp"
+            android:layout_height="580dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="70dp"
@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:orientation="vertical"/>
+                android:orientation="vertical" />
 
 
         </ScrollView>
@@ -70,13 +70,13 @@
             android:layout_height="30dp"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="12dp"
-            android:layout_marginTop="95dp"
+            android:layout_marginTop="23dp"
             android:text="839.14"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView21"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/textView19"
@@ -84,13 +84,13 @@
             android:layout_height="30dp"
             android:layout_marginStart="51dp"
             android:layout_marginLeft="51dp"
-            android:layout_marginTop="95dp"
+            android:layout_marginTop="23dp"
             android:text="KOSPI"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/textView20"
