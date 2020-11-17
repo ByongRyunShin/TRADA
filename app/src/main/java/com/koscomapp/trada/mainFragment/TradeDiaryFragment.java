@@ -11,10 +11,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.koscomapp.trada.R;
 import com.koscomapp.trada.Sub;
+import com.koscomapp.trada.http.APIClient;
+import com.koscomapp.trada.http.APIInterface;
 import com.koscomapp.trada.http.OpenAPIManager;
+import com.koscomapp.trada.http.ResultMarketIndex;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TradeDiaryFragment extends Fragment {
 
@@ -50,8 +58,45 @@ public class TradeDiaryFragment extends Fragment {
         TextView kospitv = (TextView) root.findViewById(R.id.textView20);
         TextView kosdaqtv = (TextView) root.findViewById(R.id.textView22);
 
-        kospitv.setText(apiManager.getMarketIndex(getActivity().getApplicationContext(),"kospi"));
-        kosdaqtv.setText(apiManager.getMarketIndex(getActivity().getApplicationContext(),"kosdaq"));
+        APIInterface api = APIClient.getListApiService();
+
+        Call<ResultMarketIndex> call = api.getMarketIndex("kospi", "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
+
+        call.enqueue(new Callback<ResultMarketIndex>() {
+            @Override
+            public void onResponse(Call<ResultMarketIndex> call, Response<ResultMarketIndex> response) {
+
+                if(response.isSuccessful()) {
+                    ResultMarketIndex result = response.body();
+                    kospitv.setText(result.getMarketDetail().getTrdPrc());
+                } else {
+                    Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<ResultMarketIndex> call, Throwable t) {
+                Toast.makeText(getContext(),"onFailure",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        call = api.getMarketIndex("kosdaq", "l7xxf5913ee4b7714c5eb5b18224a2e5e23e");
+
+        call.enqueue(new Callback<ResultMarketIndex>() {
+            @Override
+            public void onResponse(Call<ResultMarketIndex> call, Response<ResultMarketIndex> response) {
+
+                if(response.isSuccessful()) {
+                    ResultMarketIndex result = response.body();
+                    kosdaqtv.setText(result.getMarketDetail().getTrdPrc());
+                } else {
+                    Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<ResultMarketIndex> call, Throwable t) {
+                Toast.makeText(getContext(),"onFailure",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         Sub cardview = new Sub(getActivity().getApplicationContext());
         Sub cardview2 = new Sub(getActivity().getApplicationContext());
